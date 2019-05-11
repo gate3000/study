@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.cpp
+iostream
+-
+cstring
+-
+input_to_array.h
+/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
+
+/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
+vector
+-
+
+/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/main.cpp
+iostream
+-
+vector
+-
+input_to_array.h
+/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
+

@@ -1,0 +1,7 @@
+# cmake_minimum_required(VERSION <specify CMake version here>)
+project(exercise)
+cmake_minimum_required(VERSION 3.13)
+set(CMAKE_LEGACY_CYGWIN_WIN32 0)
+set(CMAKE_CXX_STANDARD 14)
+include_directories(/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study)
+add_executable(InputHandling main.cpp input_to_array.cpp)
