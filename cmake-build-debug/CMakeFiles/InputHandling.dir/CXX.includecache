@@ -6,23 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.cpp
-iostream
--
-cstring
--
-input_to_array.h
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
-
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
+/home/gate3/devel/study/array_sorting.h
 vector
 -
 
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/main.cpp
+/home/gate3/devel/study/input_to_array.h
+vector
+-
+
+/home/gate3/devel/study/main.cpp
 iostream
 -
 vector
 -
 input_to_array.h
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.h
+/home/gate3/devel/study/input_to_array.h
+array_sorting.h
+/home/gate3/devel/study/array_sorting.h
 
