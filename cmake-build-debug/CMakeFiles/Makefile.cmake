@@ -49,5 +49,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/InputHandling.dir/DependInfo.cmake"
+  "CMakeFiles/input_handling.dir/DependInfo.cmake"
+  "CMakeFiles/robot.dir/DependInfo.cmake"
   )

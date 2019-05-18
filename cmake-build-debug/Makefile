@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named InputHandling
+# Target rules for targets named input_handling
 
 # Build rule for target.
-InputHandling: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 InputHandling
-.PHONY : InputHandling
+input_handling: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 input_handling
+.PHONY : input_handling
 
 # fast build rule for target.
-InputHandling/fast:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/build
-.PHONY : InputHandling/fast
+input_handling/fast:
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/build
+.PHONY : input_handling/fast
+
+#=============================================================================
+# Target rules for targets named robot
+
+# Build rule for target.
+robot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 robot
+.PHONY : robot
+
+# fast build rule for target.
+robot/fast:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/build
+.PHONY : robot/fast
 
 input_to_array.o: input_to_array.cpp.o
 
@@ -129,7 +142,7 @@ input_to_array.o: input_to_array.cpp.o
 
 # target to build an object file
 input_to_array.cpp.o:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/input_to_array.cpp.o
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/input_to_array.cpp.o
 .PHONY : input_to_array.cpp.o
 
 input_to_array.i: input_to_array.cpp.i
@@ -138,7 +151,7 @@ input_to_array.i: input_to_array.cpp.i
 
 # target to preprocess a source file
 input_to_array.cpp.i:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/input_to_array.cpp.i
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/input_to_array.cpp.i
 .PHONY : input_to_array.cpp.i
 
 input_to_array.s: input_to_array.cpp.s
@@ -147,7 +160,7 @@ input_to_array.s: input_to_array.cpp.s
 
 # target to generate assembly for a file
 input_to_array.cpp.s:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/input_to_array.cpp.s
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/input_to_array.cpp.s
 .PHONY : input_to_array.cpp.s
 
 main.o: main.cpp.o
@@ -156,7 +169,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +178,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,8 +187,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/InputHandling.dir/build.make CMakeFiles/InputHandling.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/input_handling.dir/build.make CMakeFiles/input_handling.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+robot.o: robot.cpp.o
+
+.PHONY : robot.o
+
+# target to build an object file
+robot.cpp.o:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/robot.cpp.o
+.PHONY : robot.cpp.o
+
+robot.i: robot.cpp.i
+
+.PHONY : robot.i
+
+# target to preprocess a source file
+robot.cpp.i:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/robot.cpp.i
+.PHONY : robot.cpp.i
+
+robot.s: robot.cpp.s
+
+.PHONY : robot.s
+
+# target to generate assembly for a file
+robot.cpp.s:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/robot.cpp.s
+.PHONY : robot.cpp.s
 
 # Help Target
 help:
@@ -184,14 +224,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... InputHandling"
 	@echo "... edit_cache"
+	@echo "... input_handling"
+	@echo "... robot"
 	@echo "... input_to_array.o"
 	@echo "... input_to_array.i"
 	@echo "... input_to_array.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... robot.o"
+	@echo "... robot.i"
+	@echo "... robot.s"
 .PHONY : help
 
 
