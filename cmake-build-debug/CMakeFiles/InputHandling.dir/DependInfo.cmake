@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/input_to_array.cpp" "/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/InputHandling.dir/input_to_array.cpp.o"
-  "/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/main.cpp" "/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/InputHandling.dir/main.cpp.o"
+  "/home/gate3/devel/study/input_to_array.cpp" "/home/gate3/devel/study/cmake-build-debug/CMakeFiles/InputHandling.dir/input_to_array.cpp.o"
+  "/home/gate3/devel/study/main.cpp" "/home/gate3/devel/study/cmake-build-debug/CMakeFiles/InputHandling.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,1 +1,0 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/exercise.dir/main.cpp.o CMakeFiles/exercise.dir/input_to_array.cpp.o  -o exercise.exe -Wl,--out-implib,libexercise.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
