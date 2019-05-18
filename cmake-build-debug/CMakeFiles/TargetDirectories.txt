@@ -1,5 +1,0 @@
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/input_handling.dir
-/cygdrive/c/Users/Minho Lee/CLionProjects/exercise/study/cmake-build-debug/CMakeFiles/robot.dir
-

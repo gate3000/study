@@ -32,5 +32,8 @@
 *.app
 
 # Build Path
+/cmake-build-debug
+cmake-build-debug/
+study/cmake-build-debug
 cmake-build-debug/*
 .*
