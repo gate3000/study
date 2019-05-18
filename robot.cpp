@@ -8,6 +8,9 @@
 #include <vector>
 #include <list>
 
+#include "potters_wheel.h"
+#include "road.h"
+
 const int CHAR_SIZE = 128;
 int test_count = 0;
 
@@ -54,5 +57,40 @@ int main(){
         std::cout << std::endl;
     }
 
+    //Make PottersWheel
+    int section_count;
+    std::vector<int> number_array;
+    std::cin.getline(input, CHAR_SIZE, '\n');
+    section_count = std::atoi(input);
+    assert((section_count <= 8) && (section_count >= 1));
+    std::cin.getline(input, CHAR_SIZE, '\n');
+    PottersWheel potters_wheel(section_count, input);
+
+    //Save Order
+    int order_count;
+    std::vector<Order*> order_array;
+    std::cin.getline(input, CHAR_SIZE, '\n');
+    order_count = std::atoi(input);
+
+    for (int i = 0; i < order_count; ++i) {
+        std::cin.getline(input, CHAR_SIZE, '\n');
+        Order *order = new Order;
+        order->set_direction(strtok(input, " "));
+        order->set_wheel_direction(std::atoi(strtok(NULL, " ")));
+        order->set_step(std::atoi(strtok(NULL, " ")));
+        order_array.push_back(order);
+    }
+
+    //Debug
+    for (int i = 0; i < order_count; ++i) {
+        Order* order = order_array[i];
+        std::cout << order->direction() << " " << order->wheel_direction() << " " << order->step() << std::endl;
+    }
+
+    for (auto it = order_array.begin(); it != order_array.end(); ++it) {
+        Order* order = *it;
+        order_array.erase(it);
+        delete order;
+    }
     return 0;
 }
