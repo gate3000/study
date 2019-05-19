@@ -24,15 +24,21 @@ public:
     int GetDistance(int direction, int step) {
         assert(direction == 1 || direction == 2);
         if (direction == 1) {
-            return numbers_[(step % section_count_)];
+            int moving_count = (step % section_count_);
+            last_index_ = (last_index_ + moving_count) % section_count_;
+            return numbers_[last_index_];
         } else {
-            return numbers_[((section_count_ - (step % section_count_)) % section_count_)];
+            int moving_count = ((section_count_ - (step % section_count_)) % section_count_);
+            last_index_ = (last_index_ + moving_count) % section_count_;
+            return numbers_[last_index_];
         }
     }
 
 private:
-    int section_count_;
     std::vector<int> numbers_;
+    int section_count_;
+    int last_index_ = 0;
+
 };
 
 #endif //EXERCISE_POTTERS_WHEEL_H
