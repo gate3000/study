@@ -23,7 +23,7 @@ public:
 
     int GetDistance(int direction, int step) {
         assert(direction == 1 || direction == 2);
-        if (direction == 1) {
+        if (direction == 2) {
             int moving_count = (step % section_count_);
             last_index_ = (last_index_ + moving_count) % section_count_;
             return numbers_[last_index_];

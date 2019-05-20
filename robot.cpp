@@ -17,68 +17,56 @@ int road[500][500] = {0};
 
 int TakeStepsToNorth(int step_count, int* initial_x, int* initial_y, int x_size, int y_size) {
     int point = 0;
-    assert((*initial_x >= 0) && (*initial_y >= 0) && (*initial_y <= y_size) && (*initial_x <= x_size));
+    assert((*initial_x >= 1) && (*initial_y >= 1) && (*initial_y <= y_size+1) && (*initial_x <= x_size+1));
 
     for (int i = 0; i < step_count; ++i) {
-        if (*initial_y == y_size)
+        if ((*initial_y == 1) || (road[*initial_x][*initial_y-1] == -1))
             return point;
-        *initial_y += 1;
-        if (road[*initial_x][*initial_y] == -1) {
-            return point;
-        }
+        *initial_y -= 1;
         point += road[*initial_x][*initial_y];
-        //road[*initial_x][*initial_y] = 0;
+        road[*initial_x][*initial_y] = 0;
     }
     return point;
 }
 
 int TakeStepsToSouth(int step_count, int* initial_x, int* initial_y, int x_size, int y_size) {
     int point = 0;
-    assert((*initial_x >= 0) && (*initial_y >= 0) && (*initial_y <= y_size) && (*initial_x <= x_size));
+    assert((*initial_x >= 1) && (*initial_y >= 1) && (*initial_y <= y_size+1) && (*initial_x <= x_size+1));
 
     for (int i = 0; i < step_count; ++i) {
-        if (*initial_y == 0)
+        if ((*initial_y == y_size+1) || (road[*initial_x][*initial_y+1] == -1))
             return point;
-        *initial_y -= 1;
-        if (road[*initial_x][*initial_y] == -1) {
-            return point;
-        }
+        *initial_y += 1;
         point += road[*initial_x][*initial_y];
-        //road[*initial_x][*initial_y] = 0;
+        road[*initial_x][*initial_y] = 0;
     }
     return point;
 }
 
 int TakeStepsToEast(int step_count, int* initial_x, int* initial_y, int x_size, int y_size) {
     int point = 0;
-    assert((*initial_x >= 0) && (*initial_y >= 0) && (*initial_y <= y_size) && (*initial_x <= x_size));
+    assert((*initial_x >= 1) && (*initial_y >= 1) && (*initial_y <= y_size+1) && (*initial_x <= x_size+1));
 
     for (int i = 0; i < step_count; ++i) {
-        if (*initial_x == x_size)
+        if ((*initial_x == x_size+1) || (road[*initial_x+1][*initial_y] == -1))
             return point;
         *initial_x += 1;
-        if (road[*initial_x][*initial_y] == -1) {
-            return point;
-        }
         point += road[*initial_x][*initial_y];
-        //road[*initial_x][*initial_y] = 0;
+        road[*initial_x][*initial_y] = 0;
     }
     return point;
 }
 
 int TakeStepsToWest(int step_count, int* initial_x, int* initial_y, int x_size, int y_size) {
     int point = 0;
-    assert((*initial_x >= 0) && (*initial_y >= 0) && (*initial_y <= y_size) && (*initial_x <= x_size));
+    assert((*initial_x >= 1) && (*initial_y >= 1) && (*initial_y <= y_size+1) && (*initial_x <= x_size+1));
 
     for (int i = 0; i < step_count; ++i) {
-        if (*initial_x == 0)
+        if ((*initial_x == 1) || (road[*initial_x-1][*initial_y] == -1))
             return point;
         *initial_x -= 1;
-        if (road[*initial_x][*initial_y] == -1) {
-            return point;
-        }
         point += road[*initial_x][*initial_y];
-        //road[*initial_x][*initial_y] = 0;
+        road[*initial_x][*initial_y] = 0;
     }
     return point;
 }
@@ -113,17 +101,17 @@ int main(){
         std::cout << "Initial Position of Robot : (" << x_initial_position << ", " << y_initial_position << ")"
                   << std::endl;
 
-        for (int i = 0; i < x_size; ++i) {
+        for (int i = 1; i < x_size+1; ++i) {
             std::cin.getline(input, CHAR_SIZE, '\n');
-            road[i][0] = std::atoi(strtok(input, " "));
-            for (int j = 1; j < y_size; ++j) {
-                road[i][j] = std::atoi(strtok(NULL, " "));
+            road[1][i] = std::atoi(strtok(input, " "));
+            for (int j = 2; j < y_size+1; ++j) {
+                road[j][i] = std::atoi(strtok(NULL, " "));
             }
         }
         //For Debug
-        for (int i = 0; i < x_size; ++i) {
-            for (int j = 0; j < y_size; ++j) {
-                std::cout << road[i][j] << " ";
+        for (int i = 1; i < x_size+1; ++i) {
+            for (int j = 1; j < y_size+1; ++j) {
+                std::cout << road[j][i] << " ";
             }
             std::cout << std::endl;
         }
@@ -159,22 +147,24 @@ int main(){
         }
 
         //Part 3: Calculate
-        int point = 0;
+        int point = road[x_initial_position][y_initial_position];
+        road[x_initial_position][y_initial_position] = 0;
         for (int i = 0; i < order_count; ++i) {
             Order *order = order_array[i];
             int distance = potters_wheel.GetDistance(order->wheel_direction(), order->step());
             char *direction = order->direction();
-            if (strcmp(direction, "E")) {
+            if (strcmp(direction, "E") == 0) {
                 point += TakeStepsToEast(distance, &x_initial_position, &y_initial_position, x_size, y_size);
-            } else if (strcmp(direction, "W")) {
+            } else if (strcmp(direction, "W") == 0) {
                 point += TakeStepsToWest(distance, &x_initial_position, &y_initial_position, x_size, y_size);
-            } else if (strcmp(direction, "S")) {
+            } else if (strcmp(direction, "S") == 0) {
                 point += TakeStepsToSouth(distance, &x_initial_position, &y_initial_position, x_size, y_size);
-            } else if (strcmp(direction, "N")) {
+            } else if (strcmp(direction, "N") == 0) {
                 point += TakeStepsToNorth(distance, &x_initial_position, &y_initial_position, x_size, y_size);
             } else {
                 assert("Wrong Direction!");
             }
+            std::cout << point << " " << x_initial_position << " " << y_initial_position << std::endl;
         }
 
         result[round][0] = point;
@@ -185,7 +175,8 @@ int main(){
         std::cout << round << " : " << point << " " << x_initial_position << " " << y_initial_position << std::endl;
 
         //Part 4: Arrange Memory
-        for (auto it = order_array.begin(); it != order_array.end(); ++it) {
+        auto it = order_array.begin();
+        while (it != order_array.end()) {
             Order* order = *it;
             order_array.erase(it);
             delete order;
