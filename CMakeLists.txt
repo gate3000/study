@@ -10,3 +10,5 @@ add_executable(robot robot.cpp potters_wheel.h road.h)
 add_executable(commute commute.cpp)
 add_executable(fibonacci fibonacci.h fibonacci.cpp)
 add_executable(coding_test brute_force.cpp)
+add_executable(paint paint.cpp)
+
