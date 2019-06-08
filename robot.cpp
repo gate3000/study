@@ -146,7 +146,7 @@ int main(){
             std::cout << order->direction() << " " << order->wheel_direction() << " " << order->step() << std::endl;
         }
 
-        //Part 3: Calculate
+        //Part 3:
         int point = road[x_initial_position][y_initial_position];
         road[x_initial_position][y_initial_position] = 0;
         for (int i = 0; i < order_count; ++i) {
